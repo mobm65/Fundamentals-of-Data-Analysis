@@ -39,6 +39,19 @@ This function will build the dictionary from the list and get the count as well 
 I modified the code to suit my requirements, basically I just need to rework the first two lines. In my code d becomes the function counts and it 
 will give me a dictionary of key-value pairs from a list of ints or strings.
 
+This function I created cannot be replicated so I consulted this website for help. https://www.w3schools.com/python/python_functions.asp
+To make the code a proper function I needed to add a return statement.  At this point I have succeeded in getting my function to return itself but
+not the answer.
+
+Return Values
+To let a function return a value, use the return statement:
+Example
+def my_function(x):
+  return 5 * x
+print(my_function(3))
+print(my_function(5))
+print(my_function(9))
+
 
 
 
