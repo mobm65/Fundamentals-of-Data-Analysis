@@ -52,7 +52,8 @@ print(my_function(3))
 print(my_function(5))
 print(my_function(9))
 
-
-
+I needed to disassociate my function from the list a so that it would work independently.  So I defined the function using b in the syntax, my function now
+iterated over b to make the dictionary.  I used the return statement to end the execution of function call and give the results I wanted.  When I ran the properly
+defined counts function on the list a, it returned every element, x, and the number of times x appeared, f(x).
 
 
