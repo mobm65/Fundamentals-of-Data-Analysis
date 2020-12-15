@@ -59,7 +59,7 @@ I needed to disassociate my function from the list a so that it would work indep
 iterated over b to make the dictionary.  I used the return statement to end the execution of function call and give the results I wanted.  When I ran the properly
 defined counts function on the list a, it returned every element, x, and the number of times x appeared, f(x).
 
-DICEROLLS
+TASK 2 - DICEROLLS
 For the 2nd Task, DICEROLLS, I googled some ideas about random sampling on numpy to decide what functions to use.  The following site was informative.
 https://medium.com/stephen-godfreys-blog/using-python-to-visualize-probability-questions-64a6f73b9568
 
