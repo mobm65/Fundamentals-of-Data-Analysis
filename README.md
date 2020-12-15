@@ -59,7 +59,7 @@ I needed to disassociate my function from the list a so that it would work indep
 iterated over b to make the dictionary.  I used the return statement to end the execution of function call and give the results I wanted.  When I ran the properly
 defined counts function on the list a, it returned every element, x, and the number of times x appeared, f(x).
 
-DICEROLLS
+TASK 2 - DICEROLLS
 For the 2nd Task, DICEROLLS, I googled some ideas about random sampling on numpy to decide what functions to use.  The following site was informative.
 https://medium.com/stephen-godfreys-blog/using-python-to-visualize-probability-questions-64a6f73b9568
 
@@ -79,4 +79,24 @@ I first tried to generate the data, the numpy function random.randint allows me 
 The next task was to develop the function by incorporating the n parameter. The previous function I created, counts, will be useful in creating a dictionary of values
 with the number of times they appear.  I again use the zip function which creates tuples and incorporates the parameter n, the number of throws.  I call the result summed_rolls and pass it through counts.  
 In the 3rd code cell of this task I combined all the elements, the function dicerolls with the parameters n (number of throws) and k (number of dice).  Stackoverflow replies suggested I started from a set with all zero values and add my next and subsequent throws, totals is my list of dice multiplied by n, the number of times dice are thrown. n_dice_rolls is the random selection chosen by the random.randint function. k is the number of dice thrown. The zip function zips the totals of dice thrown by number of times AND the random dice rolls.  I can now call return which passes totals through the function counts.  This completes the function dicerolls with the paramenters k and n.
+
+TASK 3 - NUMPY.RANDOM.BINOMIAL
+
+SOURCES
+https://www.journaldev.com/33182/python-add-to-list
+    How to find a way to add elements unto a list.
+    
+https://www.w3schools.com/python/python_while_loops.asp
+    Keeping correct syntax.
+    
+https://numpy.org/doc/stable/reference/random/generated/numpy.random.binomial.html
+https://www.w3schools.com/python/numpy_random_binomial.asp
+    Both useful sites to research the function random.binomial and its parameters.
+    
+Numpy.random is a PRNG, a pseudo random number generator, and it generates pseudo random arrays.
+A binomial function can have only two possible outcomes; yes/no, true/false, heads/tails. It is, therefore, a discrete distribution. The function I am using is numpy.random.binomial which takes three parameters: n = the number of trials, p = the probability of the outcome occuring and size = the shape of the returned array.  I will
+be using this to show the probability of throwing heads with a coin is 1 in every 2 tosses.  Therefore 68% of the data should fall within one standard deviation from the mean, 95% of the data will fall within 2 standard deviations of the mean and 99.7% of the data will fall within 3 standard deviations from the mean.  
+The first task is to create a random number of throws.  I am calling this coinflip and I will enter the parameters 100 coin tosses with a probability of .5, 100 times into the function numpy.random.binomial.  I use this to develop a function heads which throws a dice 100 times and records the number of times it faces heads up(1) or tails up (0).  This takes the input coinflips and returns them summed up.  It Uses a while loop to append instances up to 1000 and sum them.  I start with an emptylist as a base, which I call results.  I start at the element i = 0 and iterate through all elements up to 1000. I then append these results to the return from the function heads.  Finally I use seaborn distplot to plot the normal distribution.  It is not perfectly distributed but when I increase the sample size in the random.binomial function to 1000 it looks a much better fit.
+
+
 
