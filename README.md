@@ -48,6 +48,7 @@ I needed to disassociate my function from the list a so that it would work indep
 iterated over b to make the dictionary.  I used the return statement to end the execution of function call and give the results I wanted.  When I ran the properly
 defined counts function on the list a, it returned every element, x, and the number of times x appeared, f(x).
 
+
 TASK 2 - DICEROLLS
 For the 2nd Task, DICEROLLS, I googled some ideas about random sampling on numpy to decide what functions to use.  The following site was informative.
 https://medium.com/stephen-godfreys-blog/using-python-to-visualize-probability-questions-64a6f73b9568
@@ -87,17 +88,16 @@ https://numpy.org/doc/stable/reference/random/generated/numpy.random.binomial.ht
     Researching the background to and uses of this function.
 
 https://www.w3schools.com/python/numpy_random_binomial.asp
-    Both useful sites to research the function random.binomial and its parameters.
+    A useful site to research the function random.binomial and its parameters.
     
 Numpy.random is a PRNG, a pseudo random number generator, and it generates pseudo random arrays.
 A binomial function can have only two possible outcomes; yes/no, true/false, heads/tails. It is, therefore, a discrete distribution. The function I am using is numpy.random.binomial which takes three parameters: n = the number of trials, p = the probability of the outcome occuring and size = the shape of the returned array.  I will
-be using this to show the probability of throwing heads with a coin is 1 in every 2 tosses.  Therefore 68% of the data should fall within one standard deviation from the mean, 95% of the data will fall within 2 standard deviations of the mean and 99.7% of the data will fall within 3 standard deviations from the mean.  
+be using this to show the probability of throwing heads with a coin is 1 in every 2 tosses.  Therefore 68% of the data should fall within one standard deviation from the mean, 95% of the data will fall within 2 standard deviations of the mean and 99.7% of the data will fall within 3 standard deviations from the mean. 
+
 The first task is to create a random number of throws.  I am calling this coinflip and I will enter the parameters 100 coin tosses with a probability of .5, 100 times into the function numpy.random.binomial.  I use this to develop a function heads which throws a dice 100 times and records the number of times it faces heads up(1) or tails up (0).  This takes the input coinflips and returns them summed up.  It uses a while loop to append instances up to 1000 and sum them.  I start with an empty list as a base on which I call results.  I start at the element i = 0 and iterate through all elements up to 1000. I then append these results to the return from the function heads.  Finally I use seaborn distplot to plot the normal distribution.  It is not perfectly distributed but when I increase the sample size in the random.binomial function to 1000 it looks a much better fit.
 
+
 TASK 4 - SIMPSON'S PARADOX
-Simpson's paradox is a trend which is evident in a number of groups but it reverses when the groups are combined. As Mark Twain said there are "lies, damned lies and statistics." The impact of all possible variables must be considered before concluding that one variable is linked to another. Bickel's US Berkley study from 1974 seemed to indicate gender bias in favour of men. When each department was assessed individually, there was actually a small but statistically relevant bias in favour of women. Simpson's paradox can arise when there is a confounding variable. This variable is not taken into account in the causal relationship between two variables, yet it can impact them.
-For example it seems that Apple can charge whatever they want and people buy their phones. This might lead us to believe that high price correlates with high sales. A confounding variable here might be the social status attached to owning an iphone or customer loyalty to the brand.
-In this assignment I plan to show that four datasets can have a similar linear regression when plotted separately, this may change when the datasets are concatenated before plotting.
 
 SOURCES
 https://en.wikipedia.org/wiki/Simpson%27s_paradox
@@ -116,6 +116,10 @@ manipulate and use to concatenate the data.
 https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
 This site provided information about ways to merge datasets.
     
+Simpson's paradox is a trend which is evident in a number of groups but it reverses when the groups are combined. As Mark Twain said there are "lies, damned lies and statistics." The impact of all possible variables must be considered before concluding that one variable is linked to another. Bickel's US Berkley study from 1974 seemed to indicate gender bias in favour of men. When each department was assessed individually, there was actually a small but statistically relevant bias in favour of women. Simpson's paradox can arise when there is a confounding variable. This variable is not taken into account in the causal relationship between two variables, yet it can impact them.
+For example it seems that Apple can charge whatever they want and people buy their phones. This might lead us to believe that high price correlates with high sales. A confounding variable here might be the social status attached to owning an iphone or customer loyalty to the brand.
+In this assignment I plan to show that four datasets can have a similar linear regression when plotted separately, this may change when the datasets are concatenated before plotting.
+
 
 DETAILS
 I created four dataframes, dfa, dfb, dfc and dfd using python dictionary. The column x takes its data
