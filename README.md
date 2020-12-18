@@ -23,19 +23,8 @@ def mode(1st):
   
  This function should have had the desired effect, you put in a list and it returns a dictionary of key-value pairs but I didn't understand it and I could not get it to work.
  
- 
-I continued research in this line and found the following useful in solving the assigned problem.  
 https://stackoverflow.com/questions/2161752/how-to-count-the-frequency-of-the-elements-in-an-unordered-list
-
->>> a = [1,1,1,1,2,2,2,2,3,3,4,5,5]
->>> d = {x:a.count(x) for x in a}
->>> d
-{1: 4, 2: 4, 3: 2, 4: 1, 5: 2}
->>> a, b = d.keys(), d.values()
->>> a
-[1, 2, 3, 4, 5]
->>> b
-[4, 4, 2, 1, 2]
+I continued research in this line and found this site useful in solving the assigned problem.
 
 This function will build the dictionary from the list and get the count as well as get rid of duplicates.
 
@@ -64,10 +53,14 @@ For the 2nd Task, DICEROLLS, I googled some ideas about random sampling on numpy
 https://medium.com/stephen-godfreys-blog/using-python-to-visualize-probability-questions-64a6f73b9568
 
 These four sites were useful to revise some of the lessons we had done and to help create effective syntax.
-https://realpython.com/lessons/randomness-modeling-and-simulation/ Revision of creating random integer lists in Python
-https://realpython.com/lessons/while-loops-conclusion-lessons-learned/ Revision of while loops.
-https://www.w3schools.com/python/python_while_loops.asp A useful site to help find what loop I need to create to iterate through the number of dice (k) by the number of times it/they are thrown(n).
-https://www.w3schools.com/python/python_for_loops.asp Revision of for loops
+https://realpython.com/lessons/randomness-modeling-and-simulation/ 
+Revision of creating random integer lists in Python
+https://realpython.com/lessons/while-loops-conclusion-lessons-learned/ 
+Revision of while loops.
+https://www.w3schools.com/python/python_while_loops.asp 
+A useful site to help find what loop I need to create to iterate through the number of dice (k) by the number of times it/they are thrown(n).
+https://www.w3schools.com/python/python_for_loops.asp 
+Revision of for loops
 
 https://www.w3schools.com/python/ref_func_zip.asp  Helped with zipping the two face values, first two, then second two and so on.
 
@@ -80,6 +73,7 @@ The next task was to develop the function by incorporating the n parameter. The 
 with the number of times they appear.  I again use the zip function which creates tuples and incorporates the parameter n, the number of throws.  I call the result summed_rolls and pass it through counts.  
 In the 3rd code cell of this task I combined all the elements, the function dicerolls with the parameters n (number of throws) and k (number of dice).  Stackoverflow replies suggested I started from a set with all zero values and add my next and subsequent throws, totals is my list of dice multiplied by n, the number of times dice are thrown. n_dice_rolls is the random selection chosen by the random.randint function. k is the number of dice thrown. The zip function zips the totals of dice thrown by number of times AND the random dice rolls.  I can now call return which passes totals through the function counts.  This completes the function dicerolls with the paramenters k and n.
 
+
 TASK 3 - NUMPY.RANDOM.BINOMIAL
 
 SOURCES
@@ -87,16 +81,18 @@ https://www.journaldev.com/33182/python-add-to-list
     How to find a way to add elements unto a list.
     
 https://www.w3schools.com/python/python_while_loops.asp
-    Keeping correct syntax.
+    Useful to write code with correct syntax.
     
 https://numpy.org/doc/stable/reference/random/generated/numpy.random.binomial.html
+    Researching the background to and uses of this function.
+
 https://www.w3schools.com/python/numpy_random_binomial.asp
     Both useful sites to research the function random.binomial and its parameters.
     
 Numpy.random is a PRNG, a pseudo random number generator, and it generates pseudo random arrays.
 A binomial function can have only two possible outcomes; yes/no, true/false, heads/tails. It is, therefore, a discrete distribution. The function I am using is numpy.random.binomial which takes three parameters: n = the number of trials, p = the probability of the outcome occuring and size = the shape of the returned array.  I will
 be using this to show the probability of throwing heads with a coin is 1 in every 2 tosses.  Therefore 68% of the data should fall within one standard deviation from the mean, 95% of the data will fall within 2 standard deviations of the mean and 99.7% of the data will fall within 3 standard deviations from the mean.  
-The first task is to create a random number of throws.  I am calling this coinflip and I will enter the parameters 100 coin tosses with a probability of .5, 100 times into the function numpy.random.binomial.  I use this to develop a function heads which throws a dice 100 times and records the number of times it faces heads up(1) or tails up (0).  This takes the input coinflips and returns them summed up.  It Uses a while loop to append instances up to 1000 and sum them.  I start with an emptylist as a base, which I call results.  I start at the element i = 0 and iterate through all elements up to 1000. I then append these results to the return from the function heads.  Finally I use seaborn distplot to plot the normal distribution.  It is not perfectly distributed but when I increase the sample size in the random.binomial function to 1000 it looks a much better fit.
+The first task is to create a random number of throws.  I am calling this coinflip and I will enter the parameters 100 coin tosses with a probability of .5, 100 times into the function numpy.random.binomial.  I use this to develop a function heads which throws a dice 100 times and records the number of times it faces heads up(1) or tails up (0).  This takes the input coinflips and returns them summed up.  It uses a while loop to append instances up to 1000 and sum them.  I start with an empty list as a base on which I call results.  I start at the element i = 0 and iterate through all elements up to 1000. I then append these results to the return from the function heads.  Finally I use seaborn distplot to plot the normal distribution.  It is not perfectly distributed but when I increase the sample size in the random.binomial function to 1000 it looks a much better fit.
 
 TASK 4 - SIMPSON'S PARADOX
 Simpson's paradox is a trend which is evident in a number of groups but it reverses when the groups are combined. As Mark Twain said there are "lies, damned lies and statistics." The impact of all possible variables must be considered before concluding that one variable is linked to another. Bickel's US Berkley study from 1974 seemed to indicate gender bias in favour of men. When each department was assessed individually, there was actually a small but statistically relevant bias in favour of women. Simpson's paradox can arise when there is a confounding variable. This variable is not taken into account in the causal relationship between two variables, yet it can impact them.
