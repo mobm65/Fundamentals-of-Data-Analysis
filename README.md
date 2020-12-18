@@ -98,5 +98,48 @@ A binomial function can have only two possible outcomes; yes/no, true/false, hea
 be using this to show the probability of throwing heads with a coin is 1 in every 2 tosses.  Therefore 68% of the data should fall within one standard deviation from the mean, 95% of the data will fall within 2 standard deviations of the mean and 99.7% of the data will fall within 3 standard deviations from the mean.  
 The first task is to create a random number of throws.  I am calling this coinflip and I will enter the parameters 100 coin tosses with a probability of .5, 100 times into the function numpy.random.binomial.  I use this to develop a function heads which throws a dice 100 times and records the number of times it faces heads up(1) or tails up (0).  This takes the input coinflips and returns them summed up.  It Uses a while loop to append instances up to 1000 and sum them.  I start with an emptylist as a base, which I call results.  I start at the element i = 0 and iterate through all elements up to 1000. I then append these results to the return from the function heads.  Finally I use seaborn distplot to plot the normal distribution.  It is not perfectly distributed but when I increase the sample size in the random.binomial function to 1000 it looks a much better fit.
 
+TASK 4 - SIMPSON'S PARADOX
+Simpson's paradox is a trend which is evident in a number of groups but it reverses when the groups are combined. As Mark Twain said there are "lies, damned lies and statistics." The impact of all possible variables must be considered before concluding that one variable is linked to another. Bickel's US Berkley study from 1974 seemed to indicate gender bias in favour of men. When each department was assessed individually, there was actually a small but statistically relevant bias in favour of women. Simpson's paradox can arise when there is a confounding variable. This variable is not taken into account in the causal relationship between two variables, yet it can impact them.
+For example it seems that Apple can charge whatever they want and people buy their phones. This might lead us to believe that high price correlates with high sales. A confounding variable here might be the social status attached to owning an iphone or customer loyalty to the brand.
+In this assignment I plan to show that four datasets can have a similar linear regression when plotted separately, this may change when the datasets are concatenated before plotting.
+
+SOURCES
+https://en.wikipedia.org/wiki/Simpson%27s_paradox
+This site was very information and gave me a great basis to plan my assignment. 
+
+https://www.w3schools.com/python/numpy_creating_arrays.asp
+Researching the correct function to create the datasets.
+
+https://matplotlib.org/2.1.1/api/_as_gen/matplotlib.pyplot.plot.html
+Helpful in choosing a suitable plot to display the data.
+
+https://www.datacamp.com/community/tutorials/joining-dataframes-pandas
+This was really helpful for me, there were useful code snippets I could
+manipulate and use to concatenate the data.
+
+https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
+This site provided information about ways to merge datasets.
+    
+
+DETAILS
+I created four dataframes, dfa, dfb, dfc and dfd using python dictionary. The column x takes its data
+from the x, x2, x3 or x4 data created by the function np.linspace. The column y takes its
+data from the y, y2, y3 or y4 data created by the function np.linspace.
+The new dataframes are dfa, dfb, dfc and dfd and has the data from a, b, c or d, and columns x & y.
+I used pyplot to illustrate the data.
+
+I then used matplotlib to illustrate the datasets together on the same plot.
+The plot shows the four datasets shown on the same graph, they are still separate at this point.
+The legend indicates which plot is which and each trendline has a different colour.
+
+Finally I used the pandas concat function to join/concatenate the four dataframes to one dataset which I call df_row.
+
+RESULT
+This plot does not seem to indicate that the combination of the dataframes made any difference to the positive trend of the data.
+
+
+
+
+
 
 
